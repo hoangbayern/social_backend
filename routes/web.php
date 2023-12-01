@@ -1,4 +1,7 @@
 <?php
+foreach (\Illuminate\Support\Facades\File::allFiles(base_path('routes')) as $route_file) {
+    (basename($route_file) === 'web.php') ?: (require $route_file);
+}
 
 use Illuminate\Support\Facades\Route;
 
